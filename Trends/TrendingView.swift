@@ -9,17 +9,15 @@ import SwiftUI
 
 struct TrendingView: View {
     @State private var location: Location
-    @State private var testMode: Bool
     
     @ObservedObject var trendFetcher: TrendFetcher
 
     var locations: [TrendingLocation] { trendFetcher.locations }
     var trends: [Trend] { trendFetcher.trends }
+    var dateLastUpdated: Date? { trendFetcher.dateLastUpdated }
     
     init(location: Location, testMode: Bool) {
         _location = State(wrappedValue: location)
-        _testMode = State(wrappedValue: testMode)
-        
         trendFetcher = TrendFetcher(location: location, testMode: testMode)
     }
     
@@ -31,11 +29,11 @@ struct TrendingView: View {
                 }
             }
             .navigationBarTitle("Trending")
-            .navigationBarItems(leading: filter)
+            .navigationBarItems(leading: filter, trailing: lastUpdated)
         }
         .onChange(of: location) { _ in
             trendFetcher.location = location
-            trendFetcher.fetchTrending()
+            trendFetcher.fetchData(.trending)
         }
     }
     
@@ -52,20 +50,33 @@ struct TrendingView: View {
             FilterTrends(location: $location, isPresented: $showFilter, list: locations)
         }
     }
+    
+    var lastUpdated: some View {
+        Button(action: {
+            trendFetcher.fetchData(.trending)
+        }, label: {
+            if let date = dateLastUpdated {
+                Text(DateFormatter.shortTime.string(from: date))
+                Image(systemName: "clock.arrow.2.circlepath")
+            }
+        })
+    }
 }
 
 struct TrendingListEntry: View {
     var trend: Trend
 
     var body: some View {
-        VStack(alignment: .leading) {
-            Text(trend.name)
-                .bold()
-            Text("\(trend.tweetVolume ?? 0) tweets")
-                .font(.callout)
-                .foregroundColor(.blue)
+        Link(destination: URL(string: trend.url)!) {
+            VStack(alignment: .leading) {
+                Text(trend.name)
+                    .bold()
+                Text("\(trend.tweetVolume ?? 0) tweets")
+                    .font(.callout)
+                    .foregroundColor(.blue)
+            }
+            .lineLimit(1)
         }
-        .lineLimit(1)
     }
 }
 

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TrendingLocation: Codable, Equatable, Hashable, Identifiable {
+struct TrendingLocation: Codable, Equatable, Hashable, Identifiable, Comparable {
 	let country: String
 	let countryCode: String?
 	let name: String
@@ -41,5 +41,15 @@ struct TrendingLocation: Codable, Equatable, Hashable, Identifiable {
     
     static func == (lhs: TrendingLocation, rhs: TrendingLocation) -> Bool {
         lhs.woeid == rhs.woeid
+    }
+    
+    static func < (lhs: TrendingLocation, rhs: TrendingLocation) -> Bool {
+        if lhs.name == "Worldwide" || rhs.name == "Worldwide" {
+            return false
+        } else if lhs.name == "United States" || rhs.name == "United States" {
+            return true
+        } else {
+            return lhs.name < rhs.name
+        }
     }
 }
