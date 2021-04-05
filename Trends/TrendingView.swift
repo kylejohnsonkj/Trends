@@ -9,7 +9,6 @@ import SwiftUI
 
 struct TrendingView: View {
     @State private var location: Location
-    
     @ObservedObject var trendFetcher: TrendFetcher
 
     var locations: [TrendingLocation] { trendFetcher.locations }
@@ -17,8 +16,9 @@ struct TrendingView: View {
     var dateLastUpdated: Date? { trendFetcher.dateLastUpdated }
     
     init(location: Location, testMode: Bool) {
-        _location = State(wrappedValue: location)
-        trendFetcher = TrendFetcher(location: location, testMode: testMode)
+        let storedLocation = Storage.getLocationFromDefaults() ?? location
+        _location = State(wrappedValue: storedLocation)
+        trendFetcher = TrendFetcher(location: storedLocation, testMode: testMode)
     }
     
     var body: some View {
@@ -33,6 +33,7 @@ struct TrendingView: View {
         }
         .onChange(of: location) { _ in
             trendFetcher.location = location
+            Storage.saveLocationToDefaults(location)
             trendFetcher.fetchData(.trending)
         }
     }
@@ -57,7 +58,7 @@ struct TrendingView: View {
         }, label: {
             if let date = dateLastUpdated {
                 Text(DateFormatter.shortTime.string(from: date))
-                Image(systemName: "clock.arrow.2.circlepath")
+                Image(systemName: "clock.fill")
             }
         })
     }
@@ -83,5 +84,6 @@ struct TrendingListEntry: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         TrendingView(location: worldwide, testMode: true)
+//            .colorScheme(.dark)
     }
 }

@@ -16,46 +16,47 @@
 		8F22472B2610070000162223 /* Trend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2247282610070000162223 /* Trend.swift */; };
 		8F22472C2610070000162223 /* TrendingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2247292610070000162223 /* TrendingItem.swift */; };
 		8F22473026100A0100162223 /* TrendFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F22472F26100A0100162223 /* TrendFetcher.swift */; };
-		8F36CD6B2610E0500015C392 /* SwifteriOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F36CD5F2610E0480015C392 /* SwifteriOS.framework */; };
-		8F36CD6C2610E0500015C392 /* SwifteriOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8F36CD5F2610E0480015C392 /* SwifteriOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8F36CD6E2610EA5A0015C392 /* locations.json in Resources */ = {isa = PBXBuildFile; fileRef = 8F36CD6D2610EA5A0015C392 /* locations.json */; };
 		8F36CD712610EB480015C392 /* TrendingLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F36CD6F2610EB480015C392 /* TrendingLocation.swift */; };
 		8F36CD722610EB480015C392 /* PlaceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F36CD702610EB480015C392 /* PlaceType.swift */; };
 		8F36CD77261105D80015C392 /* FilterTrends.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F36CD76261105D80015C392 /* FilterTrends.swift */; };
+		8F8F28EE261AB05700541127 /* SwifteriOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F8F28E2261AB05000541127 /* SwifteriOS.framework */; };
+		8F8F28EF261AB05700541127 /* SwifteriOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8F8F28E2261AB05000541127 /* SwifteriOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8F8F28F1261AB09700541127 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8F28F0261AB09700541127 /* Storage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		8F36CD5E2610E0480015C392 /* PBXContainerItemProxy */ = {
+		8F8F28E1261AB05000541127 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 8F36CD562610E0480015C392 /* Swifter.xcodeproj */;
+			containerPortal = 8F8F28D9261AB05000541127 /* Swifter.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 8B9F50EE1944A5AB00894629;
 			remoteInfo = SwifteriOS;
 		};
-		8F36CD602610E0480015C392 /* PBXContainerItemProxy */ = {
+		8F8F28E3261AB05000541127 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 8F36CD562610E0480015C392 /* Swifter.xcodeproj */;
+			containerPortal = 8F8F28D9261AB05000541127 /* Swifter.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 8B9F51131944A61D00894629;
 			remoteInfo = SwifterMac;
 		};
-		8F36CD622610E0480015C392 /* PBXContainerItemProxy */ = {
+		8F8F28E5261AB05000541127 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 8F36CD562610E0480015C392 /* Swifter.xcodeproj */;
+			containerPortal = 8F8F28D9261AB05000541127 /* Swifter.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 8B300C1F1944AA1A00993175;
 			remoteInfo = SwifterDemoiOS;
 		};
-		8F36CD642610E0480015C392 /* PBXContainerItemProxy */ = {
+		8F8F28E7261AB05000541127 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 8F36CD562610E0480015C392 /* Swifter.xcodeproj */;
+			containerPortal = 8F8F28D9261AB05000541127 /* Swifter.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 8B300C471944AECB00993175;
 			remoteInfo = SwifterDemoMac;
 		};
-		8F36CD662610E0480015C392 /* PBXContainerItemProxy */ = {
+		8F8F28E9261AB05000541127 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 8F36CD562610E0480015C392 /* Swifter.xcodeproj */;
+			containerPortal = 8F8F28D9261AB05000541127 /* Swifter.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = F6B4D5751C7BAC4500E06514;
 			remoteInfo = SwifterTests;
@@ -69,7 +70,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				8F36CD6C2610E0500015C392 /* SwifteriOS.framework in Embed Frameworks */,
+				8F8F28EF261AB05700541127 /* SwifteriOS.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -88,11 +89,12 @@
 		8F2247282610070000162223 /* Trend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trend.swift; sourceTree = "<group>"; };
 		8F2247292610070000162223 /* TrendingItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrendingItem.swift; sourceTree = "<group>"; };
 		8F22472F26100A0100162223 /* TrendFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendFetcher.swift; sourceTree = "<group>"; };
-		8F36CD562610E0480015C392 /* Swifter.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Swifter.xcodeproj; path = "../../Downloads/Swifter-supportRawData/Swifter.xcodeproj"; sourceTree = "<group>"; };
 		8F36CD6D2610EA5A0015C392 /* locations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = locations.json; sourceTree = "<group>"; };
 		8F36CD6F2610EB480015C392 /* TrendingLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrendingLocation.swift; sourceTree = "<group>"; };
 		8F36CD702610EB480015C392 /* PlaceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceType.swift; sourceTree = "<group>"; };
 		8F36CD76261105D80015C392 /* FilterTrends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTrends.swift; sourceTree = "<group>"; };
+		8F8F28D9261AB05000541127 /* Swifter.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Swifter.xcodeproj; path = "../Swifter-supportRawData/Swifter.xcodeproj"; sourceTree = "<group>"; };
+		8F8F28F0261AB09700541127 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8F36CD6B2610E0500015C392 /* SwifteriOS.framework in Frameworks */,
+				8F8F28EE261AB05700541127 /* SwifteriOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,7 +112,7 @@
 		8F0E9384260FFE7500B2CD86 = {
 			isa = PBXGroup;
 			children = (
-				8F36CD562610E0480015C392 /* Swifter.xcodeproj */,
+				8F8F28D9261AB05000541127 /* Swifter.xcodeproj */,
 				8F0E938F260FFE7500B2CD86 /* Trends */,
 				8F0E938E260FFE7500B2CD86 /* Products */,
 				8F36CD522610DA780015C392 /* Frameworks */,
@@ -129,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				8F0E9390260FFE7500B2CD86 /* TrendsApp.swift */,
+				8F8F28F0261AB09700541127 /* Storage.swift */,
 				8F0E9392260FFE7500B2CD86 /* TrendingView.swift */,
 				8F36CD76261105D80015C392 /* FilterTrends.swift */,
 				8F22472F26100A0100162223 /* TrendFetcher.swift */,
@@ -169,14 +172,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		8F36CD572610E0480015C392 /* Products */ = {
+		8F8F28DA261AB05000541127 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8F36CD5F2610E0480015C392 /* SwifteriOS.framework */,
-				8F36CD612610E0480015C392 /* SwifterMac.framework */,
-				8F36CD632610E0480015C392 /* SwifterDemoiOS.app */,
-				8F36CD652610E0480015C392 /* SwifterDemoMac.app */,
-				8F36CD672610E0480015C392 /* SwifterTests.xctest */,
+				8F8F28E2261AB05000541127 /* SwifteriOS.framework */,
+				8F8F28E4261AB05000541127 /* SwifterMac.framework */,
+				8F8F28E6261AB05000541127 /* SwifterDemoiOS.app */,
+				8F8F28E8261AB05000541127 /* SwifterDemoMac.app */,
+				8F8F28EA261AB05000541127 /* SwifterTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -229,8 +232,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 8F36CD572610E0480015C392 /* Products */;
-					ProjectRef = 8F36CD562610E0480015C392 /* Swifter.xcodeproj */;
+					ProductGroup = 8F8F28DA261AB05000541127 /* Products */;
+					ProjectRef = 8F8F28D9261AB05000541127 /* Swifter.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -241,39 +244,39 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		8F36CD5F2610E0480015C392 /* SwifteriOS.framework */ = {
+		8F8F28E2261AB05000541127 /* SwifteriOS.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = SwifteriOS.framework;
-			remoteRef = 8F36CD5E2610E0480015C392 /* PBXContainerItemProxy */;
+			remoteRef = 8F8F28E1261AB05000541127 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		8F36CD612610E0480015C392 /* SwifterMac.framework */ = {
+		8F8F28E4261AB05000541127 /* SwifterMac.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = SwifterMac.framework;
-			remoteRef = 8F36CD602610E0480015C392 /* PBXContainerItemProxy */;
+			remoteRef = 8F8F28E3261AB05000541127 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		8F36CD632610E0480015C392 /* SwifterDemoiOS.app */ = {
+		8F8F28E6261AB05000541127 /* SwifterDemoiOS.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
 			path = SwifterDemoiOS.app;
-			remoteRef = 8F36CD622610E0480015C392 /* PBXContainerItemProxy */;
+			remoteRef = 8F8F28E5261AB05000541127 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		8F36CD652610E0480015C392 /* SwifterDemoMac.app */ = {
+		8F8F28E8261AB05000541127 /* SwifterDemoMac.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
 			path = SwifterDemoMac.app;
-			remoteRef = 8F36CD642610E0480015C392 /* PBXContainerItemProxy */;
+			remoteRef = 8F8F28E7261AB05000541127 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		8F36CD672610E0480015C392 /* SwifterTests.xctest */ = {
+		8F8F28EA261AB05000541127 /* SwifterTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = SwifterTests.xctest;
-			remoteRef = 8F36CD662610E0480015C392 /* PBXContainerItemProxy */;
+			remoteRef = 8F8F28E9261AB05000541127 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -306,6 +309,7 @@
 				8F36CD712610EB480015C392 /* TrendingLocation.swift in Sources */,
 				8F36CD77261105D80015C392 /* FilterTrends.swift in Sources */,
 				8F22472B2610070000162223 /* Trend.swift in Sources */,
+				8F8F28F1261AB09700541127 /* Storage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,9 +437,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Trends/Preview Content\"";
-				DEVELOPMENT_TEAM = 76M76GNX4F;
+				DEVELOPMENT_TEAM = C3ZDRNN77Q;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Trends/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -443,8 +448,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kjapps.SwiftUI.Trends;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kjapps.SwiftUI.Trends2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -455,9 +461,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Trends/Preview Content\"";
-				DEVELOPMENT_TEAM = 76M76GNX4F;
+				DEVELOPMENT_TEAM = C3ZDRNN77Q;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Trends/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -465,8 +472,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kjapps.SwiftUI.Trends;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kjapps.SwiftUI.Trends2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
