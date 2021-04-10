@@ -22,10 +22,10 @@ struct TrendingItem: Codable, Equatable {
 
 	init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
-		trends = try values.decodeIfPresent([Trend].self, forKey: .trends) ?? []
-        asOf = try values.decodeIfPresent(String.self, forKey: .asOf) ?? "N/A"
-        createdAt = try values.decodeIfPresent(String.self, forKey: .createdAt) ?? "N/A"
-		locations = try values.decodeIfPresent([Location].self, forKey: .locations) ?? []
+		trends = try values.decode([Trend].self, forKey: .trends)
+        asOf = try values.decode(String.self, forKey: .asOf)
+        createdAt = try values.decode(String.self, forKey: .createdAt)
+		locations = try values.decode([Location].self, forKey: .locations)
 	}
     
     static func == (lhs: TrendingItem, rhs: TrendingItem) -> Bool {

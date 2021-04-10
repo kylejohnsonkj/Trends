@@ -6,6 +6,18 @@
 //
 
 import SwiftUI
+import SwifteriOS
+
+// MARK: REPLACE NIL WITH YOUR OWN CREDENTIALS TO SHOW REAL DATA
+let apiKey: String? = nil
+let apiSecretKey: String? = nil
+
+var twitter: Swifter! = {
+    if let apiKey = apiKey, let apiSecretKey = apiSecretKey {
+        return Swifter(consumerKey: apiKey, consumerSecret: apiSecretKey)
+    }
+    return nil
+}()
 
 let worldwide = Location(name: "Worldwide", woeid: 1)
 
@@ -16,30 +28,4 @@ struct TrendsApp: App {
             TrendingView(location: worldwide, testMode: false)
         }
     }
-}
-
-extension DateFormatter {
-    static var short: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.locale = Locale(identifier: "en_US")
-        formatter.dateStyle = .short
-        formatter.timeStyle = .short
-        return formatter
-    }()
-    
-    static var shortTime: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.locale = Locale(identifier: "en_US")
-        formatter.dateStyle = .none
-        formatter.timeStyle = .short
-        return formatter
-    }()
-    
-    static var shortDate: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.locale = Locale(identifier: "en_US")
-        formatter.dateStyle = .short
-        formatter.timeStyle = .none
-        return formatter
-    }()
 }

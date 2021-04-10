@@ -8,26 +8,18 @@
 import SwiftUI
 
 struct FilterTrends: View {
-    @Binding var location: Location
-    @Binding var isPresented: Bool
+    @Binding private var location: Location
+    @Binding private var isPresented: Bool
     
     @State private var trendingLocations: [TrendingLocation?]
     @State private var draftTrendingLocation: TrendingLocation?
     
-    init(location: Binding<Location>, isPresented: Binding<Bool>, list: [TrendingLocation]) {
+    init(location: Binding<Location>, list: [TrendingLocation], isPresented: Binding<Bool>) {
         _location = location
-        _isPresented = isPresented
+        _trendingLocations = State(wrappedValue: list)
         _draftTrendingLocation = State(wrappedValue: list.filter {
             $0.woeid == location.wrappedValue.woeid }.first )
-        _trendingLocations = State(wrappedValue: list)
-    }
-    
-//    func locationAsTrendingLocation(location: Location) -> Binding<TrendingLocation> {
-//        return trendingLocations.filter { $0.woeid == location.woeid }.first
-//    }
-    
-    var containsWorldwide: Bool {
-        trendingLocations.contains { $0?.name == "Worldwide" }
+        _isPresented = isPresented
     }
     
     var body: some View {
@@ -51,17 +43,24 @@ struct FilterTrends: View {
     
     var cancel: some View {
         Button("Cancel") {
-            self.isPresented = false
+            isPresented = false
         }
     }
+    
     var done: some View {
         Button("Done") {
-            if let location = draftTrendingLocation {
-                self.location = Location(name: location.name, woeid: location.woeid)
+            if let draftLocation = draftTrendingLocation {
+                location = Location(name: draftLocation.name, woeid: draftLocation.woeid)
             } else {
-                self.location = worldwide
+                location = worldwide
             }
-            self.isPresented = false
+            isPresented = false
         }
+    }
+    
+    // MARK: - Helpers
+    
+    private var containsWorldwide: Bool {
+        trendingLocations.contains { $0?.name == "Worldwide" }
     }
 }

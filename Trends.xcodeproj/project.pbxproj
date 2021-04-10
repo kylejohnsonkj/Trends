@@ -23,6 +23,7 @@
 		8F8F28EE261AB05700541127 /* SwifteriOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F8F28E2261AB05000541127 /* SwifteriOS.framework */; };
 		8F8F28EF261AB05700541127 /* SwifteriOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8F8F28E2261AB05000541127 /* SwifteriOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8F8F28F1261AB09700541127 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8F28F0261AB09700541127 /* Storage.swift */; };
+		8FB7CECE26224DE000422A0F /* DateFormatter+Short.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB7CECD26224DE000422A0F /* DateFormatter+Short.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		8F36CD76261105D80015C392 /* FilterTrends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTrends.swift; sourceTree = "<group>"; };
 		8F8F28D9261AB05000541127 /* Swifter.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Swifter.xcodeproj; path = "../Swifter-supportRawData/Swifter.xcodeproj"; sourceTree = "<group>"; };
 		8F8F28F0261AB09700541127 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		8FB7CECD26224DE000422A0F /* DateFormatter+Short.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Short.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,11 +133,12 @@
 			isa = PBXGroup;
 			children = (
 				8F0E9390260FFE7500B2CD86 /* TrendsApp.swift */,
-				8F8F28F0261AB09700541127 /* Storage.swift */,
 				8F0E9392260FFE7500B2CD86 /* TrendingView.swift */,
 				8F36CD76261105D80015C392 /* FilterTrends.swift */,
 				8F22472F26100A0100162223 /* TrendFetcher.swift */,
+				8F8F28F0261AB09700541127 /* Storage.swift */,
 				8F224726261006F300162223 /* Models */,
+				8FB7CED426224E2700422A0F /* Extensions */,
 				8F224723261001DD00162223 /* trending.json */,
 				8F36CD6D2610EA5A0015C392 /* locations.json */,
 				8F0E9394260FFE7500B2CD86 /* Assets.xcassets */,
@@ -182,6 +185,14 @@
 				8F8F28EA261AB05000541127 /* SwifterTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		8FB7CED426224E2700422A0F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8FB7CECD26224DE000422A0F /* DateFormatter+Short.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,6 +317,7 @@
 				8F0E9393260FFE7500B2CD86 /* TrendingView.swift in Sources */,
 				8F0E9391260FFE7500B2CD86 /* TrendsApp.swift in Sources */,
 				8F22472C2610070000162223 /* TrendingItem.swift in Sources */,
+				8FB7CECE26224DE000422A0F /* DateFormatter+Short.swift in Sources */,
 				8F36CD712610EB480015C392 /* TrendingLocation.swift in Sources */,
 				8F36CD77261105D80015C392 /* FilterTrends.swift in Sources */,
 				8F22472B2610070000162223 /* Trend.swift in Sources */,

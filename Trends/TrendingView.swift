@@ -9,16 +9,21 @@ import SwiftUI
 
 struct TrendingView: View {
     @State private var location: Location
-    @ObservedObject var trendFetcher: TrendFetcher
-
-    var locations: [TrendingLocation] { trendFetcher.locations }
-    var trends: [Trend] { trendFetcher.trends }
-    var dateLastUpdated: Date? { trendFetcher.dateLastUpdated }
+    private var useFakeData: Bool
+    
+    @ObservedObject private var trendFetcher: TrendFetcher
+    
+    private var locations: [TrendingLocation] { trendFetcher.locations }
+    private var trends: [Trend] { trendFetcher.trends }
+    private var dateLastUpdated: Date? { trendFetcher.dateLastUpdated }
     
     init(location: Location, testMode: Bool) {
+        useFakeData = testMode || twitter == nil
         let storedLocation = Storage.getLocationFromDefaults() ?? location
-        _location = State(wrappedValue: storedLocation)
-        trendFetcher = TrendFetcher(location: storedLocation, testMode: testMode)
+        let locationToUse = useFakeData ? location : storedLocation
+        
+        _location = State(wrappedValue: locationToUse)
+        trendFetcher = TrendFetcher(location: locationToUse, useFakeData)
     }
     
     var body: some View {
@@ -29,30 +34,37 @@ struct TrendingView: View {
                 }
             }
             .navigationBarTitle("Trending")
-            .navigationBarItems(leading: filter, trailing: lastUpdated)
+            .navigationBarItems(leading: filter, trailing: refresh)
         }
         .onChange(of: location) { _ in
-            trendFetcher.location = location
+            updateLocation()
+        }
+    }
+    
+    private func updateLocation() {
+        trendFetcher.location = location
+        trendFetcher.fetchData(.trending)
+
+        if !useFakeData {
             Storage.saveLocationToDefaults(location)
-            trendFetcher.fetchData(.trending)
         }
     }
     
     @State private var showFilter = false
-
+    
     var filter: some View {
         Button(action: {
-            self.showFilter = true
+            showFilter = true
         }, label: {
             Image(systemName: "location.fill")
             Text(location.name)
         })
         .sheet(isPresented: $showFilter) {
-            FilterTrends(location: $location, isPresented: $showFilter, list: locations)
+            FilterTrends(location: $location, list: locations, isPresented: $showFilter)
         }
     }
     
-    var lastUpdated: some View {
+    var refresh: some View {
         Button(action: {
             trendFetcher.fetchData(.trending)
         }, label: {
@@ -65,10 +77,11 @@ struct TrendingView: View {
 }
 
 struct TrendingListEntry: View {
-    var trend: Trend
-
+    let trend: Trend
+    var url: URL { URL(string: trend.url)! }
+    
     var body: some View {
-        Link(destination: URL(string: trend.url)!) {
+        Link(destination: url) {
             VStack(alignment: .leading) {
                 Text(trend.name)
                     .bold()
@@ -76,12 +89,11 @@ struct TrendingListEntry: View {
                     .font(.callout)
                     .foregroundColor(.blue)
             }
-            .lineLimit(1)
         }
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct TrendingView_Previews: PreviewProvider {
     static var previews: some View {
         TrendingView(location: worldwide, testMode: true)
 //            .colorScheme(.dark)

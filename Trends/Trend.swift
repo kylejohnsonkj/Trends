@@ -10,7 +10,7 @@ import Foundation
 struct Trend: Codable, Equatable, Identifiable {
 	let name: String
 	let url: String
-	let promotedContent: String
+	let promotedContent: String?
 	let query: String
 	let tweetVolume: Int?
     
@@ -26,11 +26,11 @@ struct Trend: Codable, Equatable, Identifiable {
 
 	init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
-		name = try values.decodeIfPresent(String.self, forKey: .name) ?? "N/A"
-		url = try values.decodeIfPresent(String.self, forKey: .url) ?? "N/A"
-        promotedContent = try values.decodeIfPresent(String.self, forKey: .promotedContent) ?? "N/A"
-		query = try values.decodeIfPresent(String.self, forKey: .query) ?? "N/A"
-        tweetVolume = try values.decodeIfPresent(Int.self, forKey: .tweetVolume)
+		name = try values.decode(String.self, forKey: .name)
+		url = try values.decode(String.self, forKey: .url)
+        promotedContent = try values.decodeIfPresent(String.self, forKey: .promotedContent)     // can be nil
+		query = try values.decode(String.self, forKey: .query)
+        tweetVolume = try values.decodeIfPresent(Int.self, forKey: .tweetVolume)    // trends with nil here are filtered out
 	}
     
     static func == (lhs: Trend, rhs: Trend) -> Bool {

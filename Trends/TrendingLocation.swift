@@ -31,7 +31,7 @@ struct TrendingLocation: Codable, Equatable, Hashable, Identifiable, Comparable 
 	init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
 		country = try values.decode(String.self, forKey: .country)
-		countryCode = try values.decodeIfPresent(String.self, forKey: .countryCode)
+		countryCode = try values.decodeIfPresent(String.self, forKey: .countryCode)     // can be nil
 		name = try values.decode(String.self, forKey: .name)
 		parentid = try values.decode(Int.self, forKey: .parentid)
 		placeType = try values.decode(PlaceType.self, forKey: .placeType)

@@ -23,8 +23,8 @@ struct Location: Codable, Equatable, Hashable {
 
 	init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
-		name = try values.decodeIfPresent(String.self, forKey: .name) ?? "N/A"
-		woeid = try values.decodeIfPresent(Int.self, forKey: .woeid) ?? -1
+		name = try values.decode(String.self, forKey: .name)
+		woeid = try values.decode(Int.self, forKey: .woeid)
 	}
     
     static func == (lhs: Location, rhs: Location) -> Bool {
